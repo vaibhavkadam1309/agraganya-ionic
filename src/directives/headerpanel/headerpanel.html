@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-navbar class="danger">
+    <button ion-button *ngIf="!selectedItem" menuToggle="left" class="hidden-lg" hideWhen="landscape">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+   
+    <ion-title danger ><a href="Javascript:void(0);">अग्रगण्य</a></ion-title>
+    <button ion-button end *ngIf="!selectedItem" menuToggle="right" class="hidden-lg" hideWhen="landscape">
+      <ion-icon name="menu"></ion-icon>
+    </button>
+  </ion-navbar>
+</ion-header>

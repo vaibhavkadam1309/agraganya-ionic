@@ -1,0 +1,45 @@
+<ion-content padding-top scroll="false">
+
+    <div text-center margin-bottom>
+        <img style="height:60px;width:60px" src="./assets/images/logo.png" alt="logo" />
+        <h3 no-margin style="font-weight: 300;">Welcome to <b>Agraganya</b></h3>
+        <p no-margin>Log in to continue</p>
+    </div>
+    <div class="login-screen" padding>
+        <form #loginForm="ngForm" novalidate>
+            <ion-item>
+                <ion-label dark>
+                    <ion-icon name="person"></ion-icon>
+                </ion-label>
+                <ion-input placeholder="Your email" type="email" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$" [(ngModel)]="credentials.email"
+                    id="email" name="email" #email="ngModel" required>
+                </ion-input>
+            </ion-item>
+            <p [hidden]="email.value || email.pristine" danger padding-left>
+                E-mail Id required
+            </p>
+            <p [hidden]="email.valid || !email.value || email.pristine" danger padding-left>
+                Please enter valid email
+            </p>
+            <ion-item>
+                <ion-label dark>
+                    <ion-icon name="lock"></ion-icon>
+                </ion-label>
+                <ion-input placeholder="Your password" type="password" [(ngModel)]="credentials.password" id="password" name="password" #password="ngModel"
+                    required>
+                </ion-input>
+            </ion-item>
+            <p [hidden]="password.valid || password.pristine" danger padding-left>
+                Password required
+            </p>
+
+            <ion-item no-lines>
+                <ion-label>Remember me</ion-label>
+                <ion-checkbox [(ngModel)]="rememberMe" [ngModelOptions]="{standalone: true}" no-margin no-padding></ion-checkbox>
+            </ion-item>
+            <p>
+                <button (click)="onLogin()" type="submit" primary block [disabled]="!loginForm.form.valid"> Login </button>
+            </p>
+        </form>
+    </div>
+</ion-content>

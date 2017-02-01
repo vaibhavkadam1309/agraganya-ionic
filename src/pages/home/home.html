@@ -1,0 +1,24 @@
+<headerPanel></headerPanel>
+<ion-content padding-top>
+  <ion-grid>
+    <ion-row margin-top padding-top>
+      <ion-col width-20 padding-right hideWhen="portrait" showWhen="landscape">
+        <leftPanel></leftPanel>
+      </ion-col>
+      <ion-col width-60 margin-top class="profile">
+        <ion-list no-lines>
+          <button ion-item *ngFor="let item of items" (click)="newsSelected(item)">
+           {{ item }}
+          </button>
+        </ion-list>
+
+      </ion-col>
+      <ion-col width-20 padding-left hideWhen="portrait" showWhen="landscape">
+        <rightPanel></rightPanel>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
+<ion-footer>
+  <footerPanel></footerPanel>
+</ion-footer>

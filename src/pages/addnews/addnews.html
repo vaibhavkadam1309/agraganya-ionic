@@ -1,0 +1,50 @@
+<headerPanel></headerPanel>
+<ion-content padding-top>
+    <ion-grid>
+        <ion-row margin-top padding-top>
+            <ion-col width-20 padding-right hideWhen="portrait" showWhen="landscape">
+                <leftPanel></leftPanel>
+            </ion-col>
+            <ion-col width-60 margin-top class="profile">
+                <ion-row baseline>
+                    <ion-col>
+                        <h3>Add News</h3>
+                    </ion-col>
+                </ion-row>
+                <ion-card>
+                    <form #newsForm="ngForm" novalidate>
+                        <ion-item class="no-background">
+                            <ion-label>News Title</ion-label>
+                            <ion-input type="text" [(ngModel)]="addnews.title" id="title" name="title" pattern="^\S+$" #title="ngModel" required>
+                            </ion-input>
+                        </ion-item>
+                        <p [hidden]="title.value || title.pristine" danger padding-left>
+                            title is required
+                        </p>
+
+                        <ion-item class="no-background">
+                            <ion-label>News subcontent</ion-label>
+                            <ion-textarea type="text" [(ngModel)]="addnews.subcontent" id="subcontent" name="subcontent" #subcontent="ngModel" required></ion-textarea>
+                        </ion-item>
+                        <p [hidden]="subcontent.value || subcontent.pristine" danger padding-left>
+                            subcontent is required
+                        </p>
+                        <ion-item>
+                            <ion-label>News content</ion-label>
+                            <ion-textarea type="text" [(ngModel)]="addnews.content" id="content" name="content" #content="ngModel" required></ion-textarea>
+                        </ion-item>
+                        <button ion-button (click)="onCancel()" type="submit" light>Cancel</button>
+                        <button ion-button secondary (click)="onAddNews(newsForm)">Submit</button>
+                    </form>
+                </ion-card>
+
+            </ion-col>
+            <ion-col width-20 padding-left hideWhen="portrait" showWhen="landscape">
+                <rightPanel></rightPanel>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <footerPanel></footerPanel>
+</ion-footer>
