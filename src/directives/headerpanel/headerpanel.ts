@@ -4,6 +4,7 @@ import { AlertController, Platform, MenuController } from 'ionic-angular';
 import { StatusBar } from 'ionic-native';
 import { NavController, NavParams } from 'ionic-angular';
 
+import {Login} from '../../pages/login/login'
 
 
 @Component({
@@ -17,8 +18,12 @@ import { NavController, NavParams } from 'ionic-angular';
 export class HeaderPanelDirective {
    // @Input() navCtrl: any;
     items:any;
-    constructor(private menu: MenuController, private platform: Platform) {
+    constructor(private menu: MenuController, private platform: Platform,private nav: NavController) {
     
+    }
+    goPage(){
+        this.nav.push(Login);
+
     }
 }
 

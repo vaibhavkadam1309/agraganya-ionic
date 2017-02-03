@@ -9,12 +9,15 @@ import { Home } from '../pages/home/home'
 import { AddNews } from '../pages/addnews/addnews'
 import { LeftPanelDirective } from '../directives/leftpanel/leftpanel'
 import { FooterPanelDirective } from '../directives/footerpanel/footerpanel'
+import { AuthService } from '../providers/authservice/authservice';
+
 import { Demo } from '../pages/demo/demo'
 import {Login} from '../pages/login/login'
 import {NewsList} from '../pages/newslist/newslist'
 
 @Component({
-  templateUrl: 'app.html'
+  templateUrl: 'app.html',
+  providers: [AuthService]
 })
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
@@ -22,10 +25,7 @@ export class MyApp {
   // make HelloIonicPage the root (or first) page
   rootPage: any = NewsList;
   items:any;
-  constructor(
-    public platform: Platform,
-    public menu: MenuController
-  ) {
+  constructor(public platform: Platform,public menu: MenuController, private authService: AuthService) {
     this.initializeApp();
       
 

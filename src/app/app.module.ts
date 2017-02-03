@@ -12,6 +12,7 @@ import { NewsPopUp } from '../pages/newspopup/newspopup'
 import { Login } from '../pages/login/login'
 import { NewsList } from '../pages/newslist/newslist'
 import { Routes,RouterModule } from '@angular/router';
+import {WelcomePage} from '../pages/welcomepage/welcomepage'
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { Routes,RouterModule } from '@angular/router';
     AddNews, Demo,
     NewsPopUp,
     Login,
-    NewsList
+    NewsList,
+    WelcomePage
   ],
   imports: [ 
     IonicModule.forRoot(MyApp)
@@ -41,7 +43,8 @@ import { Routes,RouterModule } from '@angular/router';
     AddNews, Demo,
     NewsPopUp,
     Login,
-    NewsList
+    NewsList,
+    WelcomePage
 
   ],
   providers: [{ provide: ErrorHandler, useClass: IonicErrorHandler }]

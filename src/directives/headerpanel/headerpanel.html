@@ -3,8 +3,12 @@
     <button ion-button *ngIf="!selectedItem" menuToggle="left" class="hidden-lg" hideWhen="landscape">
       <ion-icon name="menu"></ion-icon>
     </button>
-   
-    <ion-title danger ><a href="Javascript:void(0);">अग्रगण्य</a></ion-title>
+    <ion-title danger>
+      <a href="Javascript:void(0);"><img style="height:50px;width:auto;float:left" src="./assets/images/logo.jpg" /></a>
+      <button ion-button end class="hidden-lg" style="float:right" (click) = "goPage()">
+      Login
+    </button>
+    </ion-title>
     <button ion-button end *ngIf="!selectedItem" menuToggle="right" class="hidden-lg" hideWhen="landscape">
       <ion-icon name="menu"></ion-icon>
     </button>

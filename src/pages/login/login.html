@@ -1,7 +1,7 @@
 <ion-content padding-top scroll="false">
 
     <div text-center margin-bottom>
-        <img style="height:60px;width:60px" src="./assets/images/logo.png" alt="logo" />
+        <img style="height:65px;width:245px" src="./assets/images/logo.jpg" alt="logo" />
         <h3 no-margin style="font-weight: 300;">Welcome to <b>Agraganya</b></h3>
         <p no-margin>Log in to continue</p>
     </div>
@@ -37,9 +37,9 @@
                 <ion-label>Remember me</ion-label>
                 <ion-checkbox [(ngModel)]="rememberMe" [ngModelOptions]="{standalone: true}" no-margin no-padding></ion-checkbox>
             </ion-item>
-            <p>
-                <button (click)="onLogin()" type="submit" primary block [disabled]="!loginForm.form.valid"> Login </button>
-            </p>
+            <button ion-button end class="hidden-lg" style="float:right" [disabled]="!loginForm.form.valid" (click) = "onLogin()">
+            Login
+            </button>
         </form>
     </div>
 </ion-content>

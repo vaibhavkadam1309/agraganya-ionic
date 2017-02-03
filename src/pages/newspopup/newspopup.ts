@@ -10,7 +10,7 @@ export class NewsPopUp {
     addnews:any ={};
     newsData:{};
     constructor(public navCtrl: NavController, public navParams: NavParams,private viewController:ViewController) {
-       
+        this.newsData = navParams.get('newsObject');
     }
     onAddNews(){
         console.log('vaibhav');

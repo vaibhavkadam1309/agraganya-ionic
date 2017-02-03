@@ -14,7 +14,35 @@
                 <ion-card>
                     <form #newsForm="ngForm" novalidate>
                         <ion-item class="no-background">
-                            <ion-label>News Title</ion-label>
+                            <ion-label floating primary>Select News Type</ion-label>
+                            <ion-select [(ngModel)]="addnews.news_type_id" (ngModelChange)="onChange($event)" id="typeid" name="typeid" pattern="^\S+$" #typeid="ngModel"
+                                required>
+                                <ion-option value="0" selected>चालू घडामोडी</ion-option>
+                                <ion-option value="1">संपादकीय</ion-option>
+                                <ion-option value="2">राजकीय घडामोडी</ion-option>
+                                <ion-option value="3">बिसनेस न्यूज</ion-option>
+                                <ion-option value="4">रुपेरी दुनिया</ion-option>
+                                <ion-option value="5">पाककला</ion-option>
+                                <ion-option value="6">व्यक्ती विशेष</ion-option>
+                                <ion-option value="7">आरोग्य मंत्र</ion-option>
+                                <ion-option value="8">बोधकथा</ion-option>
+                                <ion-option value="9">शेती-शेतकरी</ion-option>
+                                <ion-option value="10">शब्दकोडे</ion-option>
+                                <ion-option value="11">हास्य विनोद</ion-option>
+                                <ion-option value="12">सुविचार</ion-option>
+                                <ion-option value="13">वेध भविष्याचा</ion-option>
+                                <ion-option value="14">सोशल मिडिया कॉर्नर</ion-option>
+                                <ion-option value="15">आणि महत्वाचे</ion-option>
+
+
+                            </ion-select>
+                        </ion-item>
+                        <!--<p [hidden]="type_id.value || type_id.pristine" danger padding-left>
+                            {{staticDataService.data.EN_US.LABEL_COURSE_NAME}} {{staticDataService.data.EN_US.ERROR_MESSAGES.REQUIRED}}
+                        </p>-->
+
+                        <ion-item class="no-background">
+                            <ion-label  floating primary>News Title</ion-label>
                             <ion-input type="text" [(ngModel)]="addnews.title" id="title" name="title" pattern="^\S+$" #title="ngModel" required>
                             </ion-input>
                         </ion-item>
@@ -22,15 +50,15 @@
                             title is required
                         </p>
 
-                        <ion-item class="no-background">
-                            <ion-label>News subcontent</ion-label>
+                        <ion-item  class="no-background">
+                            <ion-label floating primary>News subcontent</ion-label>
                             <ion-textarea type="text" [(ngModel)]="addnews.subcontent" id="subcontent" name="subcontent" #subcontent="ngModel" required></ion-textarea>
                         </ion-item>
                         <p [hidden]="subcontent.value || subcontent.pristine" danger padding-left>
                             subcontent is required
                         </p>
                         <ion-item>
-                            <ion-label>News content</ion-label>
+                            <ion-label floating primary>News content</ion-label>
                             <ion-textarea type="text" [(ngModel)]="addnews.content" id="content" name="content" #content="ngModel" required></ion-textarea>
                         </ion-item>
                         <button ion-button (click)="onCancel()" type="submit" light>Cancel</button>
